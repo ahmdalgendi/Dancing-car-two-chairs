@@ -4,7 +4,7 @@ glMatrixMode(GL_MODELVIEW)
     glPushMatrix()
     glPushAttrib(GL_ALL_ATTRIB_BITS)
 
-   
+
 ##################
     glColor3f(1,0,0)
 
