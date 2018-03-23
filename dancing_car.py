@@ -107,9 +107,6 @@ def Anime():
     glScale(100, .001 , 4)
     glutWireCube(4)
 
-
-
-
     glFlush()
 
 
