@@ -3,7 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 import numpy as np
 from math import *
-
+import time
 def Init():
     #glOrtho(-10,10,-10,10,-10,10)
     glMatrixMode(GL_PROJECTION)
@@ -17,11 +17,13 @@ co = -1
 def draw():
     glPushMatrix()
     glPushAttrib(GL_ALL_ATTRIB_BITS)
-    #some shit
     glPopAttrib()
     glPopMatrix()
+
+
 def Anime():
     global x,y,co,color
+    time.sleep(.001)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
     glClear(GL_COLOR_BUFFER_BIT)
@@ -94,7 +96,7 @@ def Anime():
         x=-40
 
     x-=.02*co
-    y+= .1*co
+    y+= .4*co
 
     if(color >=.5 and color >0):
         color += .5*co
@@ -112,12 +114,14 @@ def Anime():
 
 
 
+def main():
+    glutInit()
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
+    glutInitWindowSize(600,600)
+    glutCreateWindow(b"hey")
+    Init()
+    glutDisplayFunc(Anime)
+    glutIdleFunc(Anime)
+    glutMainLoop()
 
-glutInit()
-glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
-glutInitWindowSize(600,600)
-glutCreateWindow(b"hey")
-Init()
-glutDisplayFunc(Anime)
-glutIdleFunc(Anime)
-glutMainLoop()
+main()
