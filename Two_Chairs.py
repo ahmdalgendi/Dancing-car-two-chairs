@@ -11,6 +11,21 @@ def Init():
     gluLookAt(10,10,10,0,0,0,0,1,0)
     glClearColor(1,1,1,1)
 
+def keyboard(key, xx, yy):
+    # Allows us to quit by pressing 'q'
+    # We can animate by "a" and stop by "s"
+    global anim
+
+    if key == b"a":
+        # Notice we are making anim = 1
+        # What does this mean? Look at the idle function
+        anim = 1
+    if key == b"s":
+        # STOP the ball!
+        anim = 0
+
+    if key == b"q":
+        sys.exit()
 def chair():
     x=0
 
